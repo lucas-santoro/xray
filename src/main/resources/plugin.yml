@@ -1,0 +1,6 @@
+main: io.th0rgal.xray.XrayPlugin
+name: Xray
+version: ${projectVersion}
+author: Th0rgal
+api-version: "1.14"
+softdepend: [ Oraxen ]
