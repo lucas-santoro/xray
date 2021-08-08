@@ -6,6 +6,7 @@ import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
+import org.fusesource.jansi.Ansi;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -19,7 +20,8 @@ public enum Config {
     MENU_CATEGORY_ITEM("menu.categories.%s.item"),
     MENU_CATEGORY_NAME("menu.categories.%s.name"),
     MENU_CATEGORY_BLOCKS("menu.categories.%s.blocks"),
-    MENU_CATEGORY_BLOCKS_TYPE("menu.categories.%s.blocks.%s.type");
+    MENU_CATEGORY_BLOCKS_TYPE("menu.categories.%s.blocks.%s.type"),
+    MENU_CATEGORY_BLOCKS_COLOR("menu.categories.%s.blocks.%s.color");
 
     private final String path;
     public static final LegacyComponentSerializer LEGACY_COMPONENT_SERIALIZER = LegacyComponentSerializer.builder()
@@ -70,6 +72,10 @@ public enum Config {
             case "oraxen" -> null; // todo
             default -> new ItemStack(Material.STONE);
         };
+    }
+
+    public int toColor(String... placeholders) {
+        return Integer.parseInt(toString(placeholders).replaceFirst("#", ""), 16);
     }
 
 

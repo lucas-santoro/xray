@@ -1,6 +1,5 @@
 package io.th0rgal.xray.overlay;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 
 import java.util.Map;

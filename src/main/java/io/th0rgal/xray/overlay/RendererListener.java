@@ -37,7 +37,8 @@ public class RendererListener implements Listener {
             BlockOverlay.clear(player);
             blocks.remove(location);
             for (Location block : blocks)
-                new BlockOverlay(block, 0xFFFFFFFF).send(player);
+                new BlockOverlay(block, XrayPlugin.get().getDisplayData(player)
+                        .getColor(block.getBlock().getType())).send(player);
         }
     }
 

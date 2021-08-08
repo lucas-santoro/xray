@@ -48,10 +48,11 @@ public class CategoryMenu {
         for (String block : Config.MENU_CATEGORY_BLOCKS.toConfigSection(name).getKeys(false)) {
             ItemStack stack = Config.MENU_CATEGORY_BLOCKS_TYPE.toItem(name, block);
             pane.addItem(new GuiItem(stack,
-                            (event) -> updateDisplayData(stack.getType(), event.getWhoClicked()))
-                    , i, 0);
-            pane.addItem(new GuiItem(changeColorButton), i, 1);
-            i++;
+                            (event) -> updateDisplayData(stack.getType(),
+                                    Config.MENU_CATEGORY_BLOCKS_COLOR.toColor(name, block),
+                                    event.getWhoClicked()))
+                    , i++, 0);
+
         }
         pane.addItem(new GuiItem(getItemStack(Material.BARRIER, Config.BACK.toSerializedString()),
                 (event) -> mainGui.show(event.getWhoClicked())), 4, 3);
@@ -60,9 +61,9 @@ public class CategoryMenu {
         return gui;
     }
 
-    private void updateDisplayData(Material type, HumanEntity player) {
+    private void updateDisplayData(Material type, int color, HumanEntity player) {
         DisplayData data = XrayPlugin.get().getDisplayData(player);
-        data.toggle(type, 0xFFFFFFFF);
+        data.toggle(type, color);
         XrayPlugin.get().setDisplayData(player, data);
     }
 

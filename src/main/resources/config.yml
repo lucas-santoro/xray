@@ -12,8 +12,10 @@ menu:
       blocks:
         diamond_ore:
           type: "minecraft:diamond_ore"
+          color: "#00c1fc00"
         iron_ore:
           type: "minecraft:iron_ore"
+          color: "#70FBF0F0"
 
     containers:
       name: "<gradient:#FAD6A6:#F1D2FF><bold>Containers"
@@ -21,6 +23,7 @@ menu:
       blocks:
         chest:
           type: "minecraft:chest"
+          color: "#A76E1F0"
 
     redstone:
       name: "<gradient:#FA7CBB:#F14658><bold>Redstone"
@@ -28,6 +31,7 @@ menu:
       blocks:
         redstone:
           type: "minecraft:redstone"
+          color: "#E62008"
 
     spawners:
       name: "<gradient:#737DFE:#FFCAC9><bold>Spawners"
@@ -35,3 +39,4 @@ menu:
       blocks:
         spawner:
           type: "minecraft:spawner"
+          color: "#6E0453FF"
