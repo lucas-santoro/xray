@@ -7,7 +7,6 @@ import io.th0rgal.xray.XrayPlugin;
 import io.th0rgal.xray.config.Config;
 import io.th0rgal.xray.overlay.DisplayData;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
@@ -48,20 +47,23 @@ public class CategoryMenu {
         int i = 0;
         for (String block : Config.MENU_CATEGORY_BLOCKS.toConfigSection(name).getKeys(false)) {
             ItemStack stack = Config.MENU_CATEGORY_BLOCKS_TYPE.toItem(name, block);
+            ItemMeta meta = stack.getItemMeta();
+            assert meta != null;
+            meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            if (data.getColor(stack.getType()) != 0)
+                meta.addEnchant(Enchantment.DURABILITY, 1, true);
+            stack.setItemMeta(meta);
             pane.addItem(new GuiItem(stack, event -> {
                 updateDisplayData(stack.getType(),
                         Config.MENU_CATEGORY_BLOCKS_COLOR.toColor(name, block),
                         event.getWhoClicked());
-                if (data.getColor(stack.getType()) != 0) {
-                    ItemMeta meta = stack.getItemMeta();
-                    assert meta != null;
-                    meta.addEnchant(Enchantment.DURABILITY, 1, false);
-                    meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-                    stack.setItemMeta(meta);
-                }
+                if (data.getColor(stack.getType()) != 0)
+                    meta.addEnchant(Enchantment.DURABILITY, 1, true);
+                else
+                    meta.removeEnchant(Enchantment.DURABILITY);
+                stack.setItemMeta(meta);
+                gui.update();
             }), i++, 0);
-
-
         }
 
         pane.addItem(new GuiItem(getItemStack(Material.BARRIER, Config.BACK.toSerializedString()),
