@@ -40,11 +40,11 @@ public class XrayPlugin extends JavaPlugin {
     }
 
     public DisplayData getDisplayData(HumanEntity player) {
-        return displayData.getOrDefault(player, new DisplayData());
-    }
-
-    public void setDisplayData(HumanEntity player, DisplayData data) {
+        if (displayData.containsKey(player))
+            return displayData.get(player);
+        DisplayData data = new DisplayData(player);
         displayData.put(player, data);
+        return data;
     }
 
 }

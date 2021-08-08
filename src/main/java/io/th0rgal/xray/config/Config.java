@@ -6,7 +6,6 @@ import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
-import org.fusesource.jansi.Ansi;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -46,13 +45,8 @@ public enum Config {
         return (String) getValue();
     }
 
-
     public String toString(String... placeholders) {
         return (String) getValue(placeholders);
-    }
-
-    public Boolean toBool(String... placeholders) {
-        return (Boolean) getValue(placeholders);
     }
 
     public ConfigurationSection toConfigSection(String... placeholders) {
@@ -75,7 +69,13 @@ public enum Config {
     }
 
     public int toColor(String... placeholders) {
-        return Integer.parseInt(toString(placeholders).replaceFirst("#", ""), 16);
+        String[] values = toString(placeholders).split(", ");
+        int encoded = 0;
+        encoded = encoded | Integer.parseInt(values[2]);
+        encoded = encoded | (Integer.parseInt(values[1]) << 8);
+        encoded = encoded | (Integer.parseInt(values[0]) << 16);
+        encoded = encoded | (Integer.parseInt(values[3]) << 24);
+        return encoded;
     }
 
 

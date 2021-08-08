@@ -11,32 +11,37 @@ menu:
       item: "minecraft:diamond_ore"
       blocks:
         diamond_ore:
+          name: "<#0fabff>Diamond"
           type: "minecraft:diamond_ore"
-          color: "#00c1fc00"
+          color: 15, 171, 255, 220
         iron_ore:
+          name: "<#ffb273>Iron"
           type: "minecraft:iron_ore"
-          color: "#70FBF0F0"
+          color: 255, 178, 115, 220
 
     containers:
       name: "<gradient:#FAD6A6:#F1D2FF><bold>Containers"
       item: "minecraft:chest"
       blocks:
         chest:
+          name: "<#ffc83d>Chest"
           type: "minecraft:chest"
-          color: "#A76E1F0"
+          color: 255, 200, 61, 240
 
     redstone:
       name: "<gradient:#FA7CBB:#F14658><bold>Redstone"
       item: "minecraft:redstone"
       blocks:
         redstone:
+          name: "<#ff3d3d>Redstone"
           type: "minecraft:redstone"
-          color: "#E62008"
+          color: 255, 61, 61, 220
 
     spawners:
       name: "<gradient:#737DFE:#FFCAC9><bold>Spawners"
       item: "minecraft:spawner"
       blocks:
         spawner:
+          name: "<#9700c4>Spawner"
           type: "minecraft:spawner"
-          color: "#6E0453FF"
+          color: 151, 0, 196, 255
