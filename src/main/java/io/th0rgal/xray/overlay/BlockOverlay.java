@@ -1,14 +1,13 @@
-package io.th0rgal.xray;
+package io.th0rgal.xray.overlay;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import io.netty.buffer.Unpooled;
-import net.minecraft.network.PacketDataSerializer;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -46,12 +45,11 @@ public class BlockOverlay {
         writeVarInt(out, 0);
         out.writeInt(lifetime);
         packetContainer.getModifier().write(1,
-                new PacketDataSerializer(Unpooled.wrappedBuffer(out.toByteArray())));
+                MinecraftReflection.getPacketDataSerializer(Unpooled.wrappedBuffer(out.toByteArray())));
         try {
             ProtocolLibrary.getProtocolManager().sendServerPacket(player, packetContainer);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(
-                    "Cannot send packet " + packetContainer, e);
+        } catch (InvocationTargetException exception) {
+            throw new RuntimeException("Cannot send packet " + packetContainer, exception);
         }
     }
 
@@ -70,6 +68,19 @@ public class BlockOverlay {
 
             out.writeByte(currentByte);
         } while (value != 0);
+    }
+
+    public static void clear(Player player) {
+        PacketContainer packetContainer = new PacketContainer(PacketType.Play.Server.CUSTOM_PAYLOAD);
+        packetContainer.getMinecraftKeys().write(0,
+                new MinecraftKey("minecraft", "debug/game_test_clear"));
+        packetContainer.getModifier().write(1,
+                MinecraftReflection.getPacketDataSerializer(Unpooled.wrappedBuffer(new byte[]{})));
+        try {
+            ProtocolLibrary.getProtocolManager().sendServerPacket(player, packetContainer);
+        } catch (InvocationTargetException exception) {
+            throw new RuntimeException("Cannot send packet " + packetContainer, exception);
+        }
     }
 
 }
