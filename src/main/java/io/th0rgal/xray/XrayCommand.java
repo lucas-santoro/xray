@@ -5,22 +5,22 @@ import io.th0rgal.xray.overlay.Renderer;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class XrayCommand {
 
     private final CommandAPICommand command;
 
-    public XrayCommand(JavaPlugin plugin) {
+    public XrayCommand() {
         command = new CommandAPICommand("xray")
                 .withPermission("xray.command")
                 .executes((sender, args) -> {
                     if (sender instanceof Player player) {
+                        XrayPlugin.get().getMenu().show(player);
                         new Renderer(player,
                                 50,
                                 (Block block) -> block.getType() == Material.DIAMOND_ORE)
-                                .runTaskTimerAsynchronously(plugin, 0, 25);
+                                .runTaskTimerAsynchronously(XrayPlugin.get(), 0, 25);
                     }
                 });
     }

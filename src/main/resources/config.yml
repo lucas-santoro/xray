@@ -1,0 +1,36 @@
+menu:
+
+  exit: "<gradient:#FA7CBB:#F14658>Exit"
+  back: "<gradient:#FA7CBB:#F14658>Back"
+  toggle: "<gradient:#2F80ED:#B2FFDA>Toggle"
+  color: "<gradient:#D6FF7F:#00B3CC>Change Color"
+
+  categories:
+
+    ores:
+      name: "<gradient:#59A7EA:#F1D2FF><bold>Ores"
+      item: "minecraft:diamond_ore"
+      blocks:
+        diamond_ore:
+         type: "minecraft:diamond_ore"
+
+    containers:
+      name: "<gradient:#FAD6A6:#F1D2FF><bold>Containers"
+      item: "minecraft:chest"
+      blocks:
+        chest:
+          type: "minecraft:chest"
+
+    redstone:
+      name: "<gradient:#FA7CBB:#F14658><bold>Redstone"
+      item: "minecraft:redstone"
+      blocks:
+        redstone:
+          type: "minecraft:redstone"
+
+    spawners:
+      name: "<gradient:#737DFE:#FFCAC9><bold>Spawners"
+      item: "minecraft:spawner"
+      blocks:
+        spawner:
+          type: "minecraft:spawner"
