@@ -2,7 +2,6 @@ menu:
 
   exit: "<gradient:#FA7CBB:#F14658>Exit"
   back: "<gradient:#FA7CBB:#F14658>Back"
-  toggle: "<gradient:#2F80ED:#B2FFDA>Toggle"
   color: "<gradient:#D6FF7F:#00B3CC>Change Color"
 
   categories:
@@ -12,7 +11,9 @@ menu:
       item: "minecraft:diamond_ore"
       blocks:
         diamond_ore:
-         type: "minecraft:diamond_ore"
+          type: "minecraft:diamond_ore"
+        iron_ore:
+          type: "minecraft:iron_ore"
 
     containers:
       name: "<gradient:#FAD6A6:#F1D2FF><bold>Containers"

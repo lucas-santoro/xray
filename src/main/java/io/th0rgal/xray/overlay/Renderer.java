@@ -2,10 +2,10 @@ package io.th0rgal.xray.overlay;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.event.HandlerList;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class Renderer extends BukkitRunnable {
@@ -25,7 +25,7 @@ public class Renderer extends BukkitRunnable {
 
     @FunctionalInterface
     public interface BlockFilter {
-        boolean isFiltered(Block block);
+        int filter(Block block);
     }
 
     @Override
@@ -43,9 +43,10 @@ public class Renderer extends BukkitRunnable {
             for (int j = -length / 2; j < length / 2; j++)
                 for (int k = -length / 2; k < length / 2; k++) {
                     Block block = world.getBlockAt(previousLocation.clone().add(i, j, k));
-                    if (filter.isFiltered(block)) {
+                    int color = filter.filter(block);
+                    if (color != 0) {
                         listener.addLocation(block.getLocation());
-                        new BlockOverlay(block.getLocation(), 0xFFFFFFFF).send(player);
+                        new BlockOverlay(block.getLocation(), color).send(player);
                     }
                 }
     }

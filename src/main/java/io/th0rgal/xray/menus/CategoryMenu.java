@@ -5,8 +5,10 @@ import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
 import com.github.stefvanschie.inventoryframework.pane.StaticPane;
 import io.th0rgal.xray.XrayPlugin;
 import io.th0rgal.xray.config.Config;
+import io.th0rgal.xray.overlay.DisplayData;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -40,15 +42,15 @@ public class CategoryMenu {
 
     private ChestGui getCategoryGUI(String name) {
         ChestGui gui = new ChestGui(4, "XRay - " + name);
-        final StaticPane pane = new StaticPane(0, 0, 9, 4);
+        final StaticPane pane = new StaticPane(0, 0, 9, 3);
         int i = 0;
-
-        ItemStack toggleButton = getItemStack(Material.POLISHED_BLACKSTONE_BUTTON, Config.TOGGLE.toSerializedString());
         ItemStack changeColorButton = getItemStack(Material.LIME_CONCRETE, Config.COLOR.toSerializedString());
         for (String block : Config.MENU_CATEGORY_BLOCKS.toConfigSection(name).getKeys(false)) {
-            pane.addItem(new GuiItem(Config.MENU_CATEGORY_BLOCKS_TYPE.toItem(name, block)), i, 0);
-            pane.addItem(new GuiItem(toggleButton), i, 1);
-            pane.addItem(new GuiItem(changeColorButton), i, 2);
+            ItemStack stack = Config.MENU_CATEGORY_BLOCKS_TYPE.toItem(name, block);
+            pane.addItem(new GuiItem(stack,
+                            (event) -> updateDisplayData(stack.getType(), event.getWhoClicked()))
+                    , i, 0);
+            pane.addItem(new GuiItem(changeColorButton), i, 1);
             i++;
         }
         pane.addItem(new GuiItem(getItemStack(Material.BARRIER, Config.BACK.toSerializedString()),
@@ -56,6 +58,12 @@ public class CategoryMenu {
         gui.setOnTopClick(event -> event.setCancelled(true));
         gui.addPane(pane);
         return gui;
+    }
+
+    private void updateDisplayData(Material type, HumanEntity player) {
+        DisplayData data = XrayPlugin.get().getDisplayData(player);
+        data.toggle(type, 0xFFFFFFFF);
+        XrayPlugin.get().setDisplayData(player, data);
     }
 
     private ItemStack getItemStack(Material type, String name) {

@@ -2,7 +2,6 @@ package io.th0rgal.xray;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import io.th0rgal.xray.overlay.Renderer;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -19,7 +18,7 @@ public class XrayCommand {
                         XrayPlugin.get().getMenu().show(player);
                         new Renderer(player,
                                 50,
-                                (Block block) -> block.getType() == Material.DIAMOND_ORE)
+                                (Block block) -> XrayPlugin.get().getDisplayData(player).getColor(block.getType()))
                                 .runTaskTimerAsynchronously(XrayPlugin.get(), 0, 25);
                     }
                 });
