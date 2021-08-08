@@ -30,7 +30,8 @@ public class Renderer extends BukkitRunnable {
 
     @Override
     public void run() {
-        if (previousLocation == null || previousLocation.distanceSquared(player.getLocation()) > length * length * 0.5) {
+        if (previousLocation == null
+                || previousLocation.distanceSquared(player.getLocation()) > length * length * 0.5) {
             updateRendering();
         }
     }
@@ -49,8 +50,4 @@ public class Renderer extends BukkitRunnable {
                 }
     }
 
-    @Override
-    public void cancel() {
-        HandlerList.unregisterAll();
-    }
 }

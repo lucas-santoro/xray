@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -42,8 +43,10 @@ public class RendererListener implements Listener {
 
     @EventHandler
     public void onPlayerDisconnect(PlayerQuitEvent event) {
-        if (event.getPlayer().getUniqueId() == player.getUniqueId())
+        if (event.getPlayer().getUniqueId() == player.getUniqueId()) {
+            HandlerList.unregisterAll(this);
             runnable.cancel();
+        }
     }
 
 }
