@@ -40,6 +40,7 @@ public class RendererListener implements Listener {
         }
     }
 
+    @EventHandler
     public void onPlayerDisconnect(PlayerQuitEvent event) {
         if (event.getPlayer().getUniqueId() == player.getUniqueId())
             runnable.cancel();

@@ -2,7 +2,6 @@ package io.th0rgal.xray;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import io.th0rgal.xray.overlay.Renderer;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
