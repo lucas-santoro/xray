@@ -1,5 +1,5 @@
 settings:
-  render_distance: 32
+  render_distance: 50
   refresh_cooldown: 20
 
 menu:
@@ -37,7 +37,7 @@ menu:
           type: "minecraft:copper_ore"
           color: 255, 134, 64, 200
         deepslate_copper_ore:
-          name: "<#ff8640>■ <#d5d9db>Copper"
+          name: "<#ff8640>■ <#d5d9db>Deepslate Copper"
           type: "minecraft:deepslate_copper_ore"
           color: 255, 134, 64, 240
 

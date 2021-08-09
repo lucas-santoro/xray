@@ -28,7 +28,7 @@ public class CategoryMenu {
         mainGui = new ChestGui(6, "XRay");
         ConfigurationSection categories = Config.MENU_CATEGORIES.toConfigSection();
 
-        final StaticPane pane = new StaticPane(0, 0, 9, 6);
+        final StaticPane pane = new StaticPane(0, 0, 9, 5);
         int i = 0;
         for (String name : categories.getKeys(false).stream().sorted().collect(Collectors.toList())) {
             pane.addItem(new GuiItem(getItemStack(Config.MENU_CATEGORY_ITEM.toItem(name),
@@ -37,10 +37,12 @@ public class CategoryMenu {
                     i % 9, i / 9);
             i++;
         }
-        pane.addItem(new GuiItem(getItemStack(Material.BARRIER, Config.EXIT.toSerializedString()),
-                event -> event.getWhoClicked().closeInventory()), 4, 6);
+        final StaticPane exit = new StaticPane(4, 5, 1, 1);
+        exit.addItem(new GuiItem(getItemStack(Material.BARRIER, Config.EXIT.toSerializedString()),
+                event -> event.getWhoClicked().closeInventory()), 0, 0);
 
         mainGui.addPane(pane);
+        mainGui.addPane(exit);
         return mainGui;
     }
 
