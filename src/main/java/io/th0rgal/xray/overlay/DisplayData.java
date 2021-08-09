@@ -1,6 +1,7 @@
 package io.th0rgal.xray.overlay;
 
 import io.th0rgal.xray.XrayPlugin;
+import io.th0rgal.xray.config.Config;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.HumanEntity;
@@ -19,9 +20,10 @@ public class DisplayData {
         this.colorPerType = new ConcurrentHashMap<>();
         this.player = player;
         this.renderer = new Renderer((Player) player,
-                50,
+                (Integer) Config.RENDER_DISTANCE.getValue(),
                 (Block block) -> XrayPlugin.get().getDisplayData(player).getColor(block.getType()));
-        renderer.runTaskTimerAsynchronously(XrayPlugin.get(), 0, 25);
+        renderer.runTaskTimerAsynchronously(XrayPlugin.get(), 0,
+                (Integer) Config.REFRESH_COOLDOWN.getValue());
     }
 
     public int getColor(Material type) {

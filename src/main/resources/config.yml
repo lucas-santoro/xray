@@ -1,3 +1,7 @@
+settings:
+  render_distance: 32
+  refresh_cooldown: 20
+
 menu:
 
   exit: "<gradient:#FA7CBB:#F14658>Exit"

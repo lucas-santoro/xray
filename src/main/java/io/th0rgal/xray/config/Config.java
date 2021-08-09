@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 public enum Config {
+    RENDER_DISTANCE("settings.render_distance"),
+    REFRESH_COOLDOWN("settings.refresh_cooldown"),
     EXIT("menu.exit"),
     BACK("menu.back"),
     MENU_CATEGORIES("menu.categories"),
