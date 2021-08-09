@@ -3,7 +3,6 @@ package io.th0rgal.xray;
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIConfig;
-import io.th0rgal.xray.menus.CategoryMenu;
 import io.th0rgal.xray.overlay.DisplayData;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,7 +25,7 @@ public class XrayPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
-        menu = new CategoryMenu().create();
+        menu = new XrayMenu().create();
         CommandAPI.onEnable(this);
         new XrayCommand().register();
     }

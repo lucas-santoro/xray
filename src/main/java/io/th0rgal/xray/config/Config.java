@@ -1,6 +1,7 @@
 package io.th0rgal.xray.config;
 
 import io.th0rgal.xray.XrayPlugin;
+import io.th0rgal.xray.blocks.BlockWrapper;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Material;
@@ -59,14 +60,8 @@ public enum Config {
                 .parse(toString(placeholders)));
     }
 
-    public ItemStack toItem(String... placeholders) {
-        String[] itemValues = toString(placeholders).split(":");
-        return switch (itemValues[0].toLowerCase()) {
-            case "minecraft" -> new ItemStack(Objects.requireNonNull(
-                    Material.getMaterial(itemValues[1].toUpperCase())));
-            case "oraxen" -> null; // todo
-            default -> new ItemStack(Material.STONE);
-        };
+    public BlockWrapper toWrappedBlock(String... placeholders) {
+        return BlockWrapper.wrap(toString(placeholders));
     }
 
     public int toColor(String... placeholders) {

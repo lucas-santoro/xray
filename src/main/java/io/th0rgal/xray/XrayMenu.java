@@ -1,14 +1,16 @@
-package io.th0rgal.xray.menus;
+package io.th0rgal.xray;
 
 import com.github.stefvanschie.inventoryframework.gui.GuiItem;
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
 import com.github.stefvanschie.inventoryframework.pane.PaginatedPane;
 import com.github.stefvanschie.inventoryframework.pane.StaticPane;
 import io.th0rgal.xray.XrayPlugin;
+import io.th0rgal.xray.blocks.BlockWrapper;
 import io.th0rgal.xray.config.Config;
 import io.th0rgal.xray.overlay.DisplayData;
 
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.HumanEntity;
@@ -20,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CategoryMenu {
+public class XrayMenu {
 
     private ChestGui mainGui;
 
@@ -31,7 +33,7 @@ public class CategoryMenu {
         final StaticPane pane = new StaticPane(0, 0, 9, 5);
         int i = 0;
         for (String name : categories.getKeys(false).stream().sorted().collect(Collectors.toList())) {
-            pane.addItem(new GuiItem(getItemStack(Config.MENU_CATEGORY_ITEM.toItem(name),
+            pane.addItem(new GuiItem(getItemStack(Config.MENU_CATEGORY_ITEM.toWrappedBlock(name).getAsItem(),
                     Config.MENU_CATEGORY_NAME.toSerializedString(name)),
                             event -> getCategoryGUI(event.getWhoClicked(), name).show(event.getWhoClicked())),
                     i % 9, i / 9);
@@ -53,19 +55,20 @@ public class CategoryMenu {
 
         List<GuiItem> items = new ArrayList<>();
         for (String block : Config.MENU_CATEGORY_BLOCKS.toConfigSection(name).getKeys(false)) {
-            ItemStack stack = Config.MENU_CATEGORY_BLOCKS_TYPE.toItem(name, block);
+            BlockWrapper wrapped = Config.MENU_CATEGORY_BLOCKS_TYPE.toWrappedBlock(name, block);
+            ItemStack stack = wrapped.getAsItem();
             ItemMeta meta = stack.getItemMeta();
             assert meta != null;
             meta.setDisplayName(Config.MENU_CATEGORY_BLOCKS_NAME.toSerializedString(name, block));
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-            if (data.getColor(stack.getType()) != 0)
+            if (data.getColor(wrapped) != 0)
                 meta.addEnchant(Enchantment.DURABILITY, 1, true);
             stack.setItemMeta(meta);
             items.add(new GuiItem(stack, event -> {
-                updateDisplayData(stack.getType(),
+                updateDisplayData(wrapped,
                         Config.MENU_CATEGORY_BLOCKS_COLOR.toColor(name, block),
                         event.getWhoClicked());
-                if (data.getColor(stack.getType()) != 0)
+                if (data.getColor(wrapped) != 0)
                     meta.addEnchant(Enchantment.DURABILITY, 1, true);
                 else
                     meta.removeEnchant(Enchantment.DURABILITY);
@@ -123,9 +126,9 @@ public class CategoryMenu {
     }
 
 
-    private void updateDisplayData(Material type, int color, HumanEntity player) {
+    private void updateDisplayData(BlockWrapper wrapper, int color, HumanEntity player) {
         DisplayData data = XrayPlugin.get().getDisplayData(player);
-        data.toggle(type, color);
+        data.toggle(wrapper, color);
     }
 
     private ItemStack getItemStack(Material type, String name) {
