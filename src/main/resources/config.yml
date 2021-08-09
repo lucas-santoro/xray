@@ -10,14 +10,88 @@ menu:
       name: "<gradient:#59A7EA:#F1D2FF><bold>Ores"
       item: "minecraft:diamond_ore"
       blocks:
-        diamond_ore:
-          name: "<#0fabff>Diamond"
-          type: "minecraft:diamond_ore"
-          color: 15, 171, 255, 220
+
+        coal_ore:
+          name: "<#0fabff>Coal"
+          type: "minecraft:coal_ore"
+          color: 15, 15, 15, 220
+        deepslate_coal_ore:
+          name: "<#0fabff>Deepslate Coal"
+          type: "minecraft:deepslate_coal_ore"
+          color: 15, 15, 15, 220
+
         iron_ore:
           name: "<#ffb273>Iron"
           type: "minecraft:iron_ore"
           color: 255, 178, 115, 220
+        deepslate_iron_ore:
+          name: "<#ffb273>Deepslate Iron"
+          type: "minecraft:deepslate_iron_ore"
+          color: 255, 178, 115, 220
+
+        copper_ore:
+          name: "<#ffb273>Copper"
+          type: "minecraft:copper_ore"
+          color: 255, 178, 115, 220
+        deepslate_copper_ore:
+          name: "<#ffb273>Copper"
+          type: "minecraft:deepslate_copper_ore"
+          color: 255, 178, 115, 220
+
+        gold_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:gold_ore"
+          color: 255, 178, 115, 220
+        deepslate_gold_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:deepslate_gold_ore"
+          color: 255, 178, 115, 220
+
+        redstone_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:redstone_ore"
+          color: 255, 178, 115, 220
+        deepslate_redstone_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:deepslate_redstone_ore"
+          color: 255, 178, 115, 220
+
+        emerald_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:emerald_ore"
+          color: 255, 178, 115, 220
+        deepslate_emerald_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:deepslate_emerald_ore"
+          color: 255, 178, 115, 220
+
+        lapis_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:lapis_ore"
+          color: 255, 178, 115, 220
+        deepslate_lapis_ore:
+          name: "<#ffb273>Iron"
+          type: "minecraft:deepslate_lapis_ore"
+          color: 255, 178, 115, 220
+
+        diamond_ore:
+          name: "<#0fabff>Diamond"
+          type: "minecraft:diamond_ore"
+          color: 15, 171, 255, 220
+        deepslate_diamond_ore:
+          name: "<#0fabff>Diamond"
+          type: "minecraft:deepslate_diamond_ore"
+          color: 15, 171, 255, 220
+
+        nether_gold_ore:
+          name: "<#0fabff>Diamond"
+          type: "minecraft:nether_gold_ore"
+          color: 15, 171, 255, 220
+
+        nether_quartz_ore:
+          name: "<#0fabff>Diamond"
+          type: "minecraft:nether_quartz_ore"
+          color: 15, 171, 255, 220
 
     containers:
       name: "<gradient:#FAD6A6:#F1D2FF><bold>Containers"
@@ -34,7 +108,7 @@ menu:
       blocks:
         redstone:
           name: "<#ff3d3d>Redstone"
-          type: "minecraft:redstone"
+          type: "minecraft:redstone_wire"
           color: 255, 61, 61, 220
 
     spawners:
