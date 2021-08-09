@@ -14,84 +14,84 @@ menu:
         coal_ore:
           name: "<#0fabff>Coal"
           type: "minecraft:coal_ore"
-          color: 15, 15, 15, 220
+          color: 15, 15, 15, 200
         deepslate_coal_ore:
           name: "<#0fabff>Deepslate Coal"
           type: "minecraft:deepslate_coal_ore"
-          color: 15, 15, 15, 220
+          color: 15, 15, 15, 240
 
         iron_ore:
           name: "<#ffb273>Iron"
           type: "minecraft:iron_ore"
-          color: 255, 178, 115, 220
+          color: 255, 178, 115, 200
         deepslate_iron_ore:
           name: "<#ffb273>Deepslate Iron"
           type: "minecraft:deepslate_iron_ore"
-          color: 255, 178, 115, 220
+          color: 255, 178, 115, 240
 
         copper_ore:
           name: "<#ffb273>Copper"
           type: "minecraft:copper_ore"
-          color: 255, 178, 115, 220
+          color: 255, 134, 64, 200
         deepslate_copper_ore:
           name: "<#ffb273>Copper"
           type: "minecraft:deepslate_copper_ore"
-          color: 255, 178, 115, 220
+          color: 255, 134, 64, 240
 
         gold_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Gold"
           type: "minecraft:gold_ore"
-          color: 255, 178, 115, 220
+          color: 250, 223, 50, 200
         deepslate_gold_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Deepslate Gold"
           type: "minecraft:deepslate_gold_ore"
-          color: 255, 178, 115, 220
+          color: 250, 223, 50, 240
 
         redstone_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Redstone"
           type: "minecraft:redstone_ore"
-          color: 255, 178, 115, 220
+          color: 250, 50, 50, 200
         deepslate_redstone_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Deepslate Redstone"
           type: "minecraft:deepslate_redstone_ore"
-          color: 255, 178, 115, 220
+          color: 250, 50, 50, 240
 
         emerald_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Emerald"
           type: "minecraft:emerald_ore"
-          color: 255, 178, 115, 220
+          color: 239, 227, 126, 200
         deepslate_emerald_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Deepslate Emerald"
           type: "minecraft:deepslate_emerald_ore"
-          color: 255, 178, 115, 220
+          color: 39, 227, 126, 240
 
         lapis_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Lapis"
           type: "minecraft:lapis_ore"
-          color: 255, 178, 115, 220
+          color: 39, 227, 126, 200
         deepslate_lapis_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>Deepslate Lapis"
           type: "minecraft:deepslate_lapis_ore"
-          color: 255, 178, 115, 220
+          color: 39, 227, 126, 240
 
         diamond_ore:
           name: "<#0fabff>Diamond"
           type: "minecraft:diamond_ore"
-          color: 15, 171, 255, 220
+          color: 15, 171, 255, 200
         deepslate_diamond_ore:
           name: "<#0fabff>Diamond"
           type: "minecraft:deepslate_diamond_ore"
-          color: 15, 171, 255, 220
+          color: 15, 171, 255, 240
 
         nether_gold_ore:
-          name: "<#0fabff>Diamond"
+          name: "<#0fabff>Nether Gold"
           type: "minecraft:nether_gold_ore"
-          color: 15, 171, 255, 220
+          color: 250, 223, 50, 200
 
         nether_quartz_ore:
-          name: "<#0fabff>Diamond"
+          name: "<#0fabff>Nether Quartz"
           type: "minecraft:nether_quartz_ore"
-          color: 15, 171, 255, 220
+          color: 230, 230, 230, 200
 
     containers:
       name: "<gradient:#FAD6A6:#F1D2FF><bold>Containers"
@@ -101,6 +101,22 @@ menu:
           name: "<#ffc83d>Chest"
           type: "minecraft:chest"
           color: 255, 200, 61, 240
+        trapped_chest:
+          name: "<#ffc83d>Trapped Chest"
+          type: "minecraft:trapped_chest"
+          color: 255, 110, 61, 240
+        ender_chest:
+          name: "<#ffc83d>Ender Chest"
+          type: "minecraft:enderchest"
+          color: 255, 61, 200, 240
+        furnace:
+          name: "<#ffc83d>Furnace"
+          type: "minecraft:furnace"
+          color: 132, 131, 145, 240
+        blast_furnace:
+          name: "<#ffc83d>Blast Furnace"
+          type: "minecraft:blast_furnace"
+          color: 112, 111, 128, 240
 
     redstone:
       name: "<gradient:#FA7CBB:#F14658><bold>Redstone"
