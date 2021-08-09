@@ -59,7 +59,7 @@ menu:
         emerald_ore:
           name: "<#ffb273>Emerald"
           type: "minecraft:emerald_ore"
-          color: 239, 227, 126, 200
+          color: 39, 227, 126, 200
         deepslate_emerald_ore:
           name: "<#ffb273>Deepslate Emerald"
           type: "minecraft:deepslate_emerald_ore"
@@ -68,20 +68,20 @@ menu:
         lapis_ore:
           name: "<#ffb273>Lapis"
           type: "minecraft:lapis_ore"
-          color: 39, 227, 126, 200
+          color: 31, 87, 207, 200
         deepslate_lapis_ore:
           name: "<#ffb273>Deepslate Lapis"
           type: "minecraft:deepslate_lapis_ore"
-          color: 39, 227, 126, 240
+          color: 31, 87, 207, 240
 
         diamond_ore:
           name: "<#0fabff>Diamond"
           type: "minecraft:diamond_ore"
-          color: 15, 171, 255, 200
+          color: 15, 211, 255, 200
         deepslate_diamond_ore:
           name: "<#0fabff>Diamond"
           type: "minecraft:deepslate_diamond_ore"
-          color: 15, 171, 255, 240
+          color: 15, 211, 255, 240
 
         nether_gold_ore:
           name: "<#0fabff>Nether Gold"
