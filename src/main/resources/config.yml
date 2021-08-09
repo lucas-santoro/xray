@@ -96,6 +96,7 @@ menu:
           type: "minecraft:nether_quartz_ore"
           color: 230, 230, 230, 200
 
+
     containers:
       name: "<gradient:#FAD6A6:#F1D2FF><bold>Containers"
       item: "minecraft:chest"
@@ -119,7 +120,8 @@ menu:
           type: "minecraft:redstone_block"
           color: 255, 61, 61, 220
 
-    spawners:
+
+    misc:
       name: "<gradient:#737DFE:#FFCAC9><bold>Misc"
       item: "minecraft:spawner"
       blocks:

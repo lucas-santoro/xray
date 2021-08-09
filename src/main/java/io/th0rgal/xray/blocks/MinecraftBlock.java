@@ -8,8 +8,8 @@ public class MinecraftBlock extends BlockWrapper {
 
     private final Material type;
 
-    public MinecraftBlock(String namespace, String name) {
-        super(namespace, name);
+    public MinecraftBlock(String name) {
+        super("minecraft", name);
         type = Material.getMaterial(name.toUpperCase());
     }
 

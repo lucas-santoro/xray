@@ -37,6 +37,7 @@ dependencies {
     compileOnly group: "org.spigotmc", name: "spigot-api", version: "1.17-R0.1-SNAPSHOT"
     compileOnly group: "com.github.dmulloy2", name: "ProtocolLib", version: "4.7.0"
     compileOnly group: 'io.netty', name: 'netty-all', version: '4.0.4.Final'
+    compileOnly 'com.github.Th0rgal:Oraxen:-SNAPSHOT'
     implementation 'com.github.stefvanschie.inventoryframework:IF:0.10.0'
     implementation 'dev.jorel.CommandAPI:commandapi-shade:6.2.0'
     implementation "net.kyori:adventure-text-minimessage:4.1.0-SNAPSHOT"

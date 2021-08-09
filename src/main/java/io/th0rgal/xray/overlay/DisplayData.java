@@ -3,6 +3,7 @@ package io.th0rgal.xray.overlay;
 import io.th0rgal.xray.XrayPlugin;
 import io.th0rgal.xray.blocks.BlockWrapper;
 import io.th0rgal.xray.config.Config;
+import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
