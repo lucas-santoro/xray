@@ -2,7 +2,6 @@ menu:
 
   exit: "<gradient:#FA7CBB:#F14658>Exit"
   back: "<gradient:#FA7CBB:#F14658>Back"
-  color: "<gradient:#D6FF7F:#00B3CC>Change Color"
 
   categories:
 
@@ -12,84 +11,84 @@ menu:
       blocks:
 
         coal_ore:
-          name: "<#0fabff>Coal"
+          name: "<#0f0f0f>■ <#d5d9db>Coal"
           type: "minecraft:coal_ore"
           color: 15, 15, 15, 200
         deepslate_coal_ore:
-          name: "<#0fabff>Deepslate Coal"
+          name: "<#0f0f0f>■ <#d5d9db>Deepslate Coal"
           type: "minecraft:deepslate_coal_ore"
           color: 15, 15, 15, 240
 
         iron_ore:
-          name: "<#ffb273>Iron"
+          name: "<#ffb273>■ <#d5d9db>Iron"
           type: "minecraft:iron_ore"
           color: 255, 178, 115, 200
         deepslate_iron_ore:
-          name: "<#ffb273>Deepslate Iron"
+          name: "<#ffb273>■ <#d5d9db>Deepslate Iron"
           type: "minecraft:deepslate_iron_ore"
           color: 255, 178, 115, 240
 
         copper_ore:
-          name: "<#ffb273>Copper"
+          name: "<#ff8640>■ <#d5d9db>Copper"
           type: "minecraft:copper_ore"
           color: 255, 134, 64, 200
         deepslate_copper_ore:
-          name: "<#ffb273>Copper"
+          name: "<#ff8640>■ <#d5d9db>Copper"
           type: "minecraft:deepslate_copper_ore"
           color: 255, 134, 64, 240
 
         gold_ore:
-          name: "<#ffb273>Gold"
+          name: "<#fadf32>■ <#d5d9db>Gold"
           type: "minecraft:gold_ore"
           color: 250, 223, 50, 200
         deepslate_gold_ore:
-          name: "<#ffb273>Deepslate Gold"
+          name: "<#fadf32>■ <#d5d9db>Deepslate Gold"
           type: "minecraft:deepslate_gold_ore"
           color: 250, 223, 50, 240
 
         redstone_ore:
-          name: "<#ffb273>Redstone"
+          name: "<#fa3232>■ <#d5d9db>Redstone"
           type: "minecraft:redstone_ore"
           color: 250, 50, 50, 200
         deepslate_redstone_ore:
-          name: "<#ffb273>Deepslate Redstone"
+          name: "<#fa3232>■ <#d5d9db>Deepslate Redstone"
           type: "minecraft:deepslate_redstone_ore"
           color: 250, 50, 50, 240
 
         emerald_ore:
-          name: "<#ffb273>Emerald"
+          name: "<#27e37e>■ <#d5d9db>Emerald"
           type: "minecraft:emerald_ore"
           color: 39, 227, 126, 200
         deepslate_emerald_ore:
-          name: "<#ffb273>Deepslate Emerald"
+          name: "<#27e37e>■ <#d5d9db>Deepslate Emerald"
           type: "minecraft:deepslate_emerald_ore"
           color: 39, 227, 126, 240
 
         lapis_ore:
-          name: "<#ffb273>Lapis"
+          name: "<#1f57cf>■ <#d5d9db>Lapis"
           type: "minecraft:lapis_ore"
           color: 31, 87, 207, 200
         deepslate_lapis_ore:
-          name: "<#ffb273>Deepslate Lapis"
+          name: "<#1f57cf>■ <#d5d9db>Deepslate Lapis"
           type: "minecraft:deepslate_lapis_ore"
           color: 31, 87, 207, 240
 
         diamond_ore:
-          name: "<#0fabff>Diamond"
+          name: "<#0fd3ff>■ <#d5d9db>Diamond"
           type: "minecraft:diamond_ore"
           color: 15, 211, 255, 200
         deepslate_diamond_ore:
-          name: "<#0fabff>Diamond"
+          name: "<#0fd3ff>■ <#d5d9db>Deepslate Diamond"
           type: "minecraft:deepslate_diamond_ore"
           color: 15, 211, 255, 240
 
         nether_gold_ore:
-          name: "<#0fabff>Nether Gold"
+          name: "<#fadf32>■ <#d5d9db>Nether Gold"
           type: "minecraft:nether_gold_ore"
           color: 250, 223, 50, 200
 
         nether_quartz_ore:
-          name: "<#0fabff>Nether Quartz"
+          name: "<#e6e6e6>■ <#d5d9db>Nether Quartz"
           type: "minecraft:nether_quartz_ore"
           color: 230, 230, 230, 200
 
@@ -98,40 +97,29 @@ menu:
       item: "minecraft:chest"
       blocks:
         chest:
-          name: "<#ffc83d>Chest"
+          name: "<#ffc83d>■ <#d5d9db>Chest"
           type: "minecraft:chest"
           color: 255, 200, 61, 240
         trapped_chest:
-          name: "<#ffc83d>Trapped Chest"
+          name: "<#ff6e3d>■ <#d5d9db>Trapped Chest"
           type: "minecraft:trapped_chest"
           color: 255, 110, 61, 240
-        ender_chest:
-          name: "<#ffc83d>Ender Chest"
-          type: "minecraft:enderchest"
-          color: 255, 61, 200, 240
-        furnace:
-          name: "<#ffc83d>Furnace"
-          type: "minecraft:furnace"
-          color: 132, 131, 145, 240
-        blast_furnace:
-          name: "<#ffc83d>Blast Furnace"
-          type: "minecraft:blast_furnace"
-          color: 112, 111, 128, 240
+
 
     redstone:
       name: "<gradient:#FA7CBB:#F14658><bold>Redstone"
       item: "minecraft:redstone"
       blocks:
         redstone:
-          name: "<#ff3d3d>Redstone"
-          type: "minecraft:redstone_wire"
+          name: "<#ff3d3d>■ <#d5d9db>Redstone Block"
+          type: "minecraft:redstone_block"
           color: 255, 61, 61, 220
 
     spawners:
-      name: "<gradient:#737DFE:#FFCAC9><bold>Spawners"
+      name: "<gradient:#737DFE:#FFCAC9><bold>Misc"
       item: "minecraft:spawner"
       blocks:
         spawner:
-          name: "<#9700c4>Spawner"
+          name: "<#9700c4>■ <#d5d9db>Spawner"
           type: "minecraft:spawner"
           color: 151, 0, 196, 255

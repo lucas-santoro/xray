@@ -13,12 +13,11 @@ import java.util.Objects;
 public enum Config {
     EXIT("menu.exit"),
     BACK("menu.back"),
-    TOGGLE("menu.toggle"),
-    COLOR("menu.color"),
     MENU_CATEGORIES("menu.categories"),
     MENU_CATEGORY_ITEM("menu.categories.%s.item"),
     MENU_CATEGORY_NAME("menu.categories.%s.name"),
     MENU_CATEGORY_BLOCKS("menu.categories.%s.blocks"),
+    MENU_CATEGORY_BLOCKS_NAME("menu.categories.%s.blocks.%s.name"),
     MENU_CATEGORY_BLOCKS_TYPE("menu.categories.%s.blocks.%s.type"),
     MENU_CATEGORY_BLOCKS_COLOR("menu.categories.%s.blocks.%s.color");
 

@@ -54,6 +54,7 @@ public class CategoryMenu {
             ItemStack stack = Config.MENU_CATEGORY_BLOCKS_TYPE.toItem(name, block);
             ItemMeta meta = stack.getItemMeta();
             assert meta != null;
+            meta.setDisplayName(Config.MENU_CATEGORY_BLOCKS_NAME.toSerializedString(name, block));
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             if (data.getColor(stack.getType()) != 0)
                 meta.addEnchant(Enchantment.DURABILITY, 1, true);
