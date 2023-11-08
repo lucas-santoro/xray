@@ -46,11 +46,7 @@ public class BlockOverlay {
         out.writeInt(lifetime);
         packetContainer.getModifier().write(1,
                 MinecraftReflection.getPacketDataSerializer(Unpooled.wrappedBuffer(out.toByteArray())));
-        try {
-            ProtocolLibrary.getProtocolManager().sendServerPacket(player, packetContainer);
-        } catch (InvocationTargetException exception) {
-            throw new RuntimeException("Cannot send packet " + packetContainer, exception);
-        }
+        ProtocolLibrary.getProtocolManager().sendServerPacket(player, packetContainer);
     }
 
     private long getPosition(Location location) {
@@ -76,11 +72,7 @@ public class BlockOverlay {
                 new MinecraftKey("minecraft", "debug/game_test_clear"));
         packetContainer.getModifier().write(1,
                 MinecraftReflection.getPacketDataSerializer(Unpooled.wrappedBuffer(new byte[]{})));
-        try {
-            ProtocolLibrary.getProtocolManager().sendServerPacket(player, packetContainer);
-        } catch (InvocationTargetException exception) {
-            throw new RuntimeException("Cannot send packet " + packetContainer, exception);
-        }
+        ProtocolLibrary.getProtocolManager().sendServerPacket(player, packetContainer);
     }
 
 }

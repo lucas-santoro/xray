@@ -56,8 +56,7 @@ public enum Config {
     }
 
     public @NotNull String toSerializedString(String... placeholders) {
-        return LEGACY_COMPONENT_SERIALIZER.serialize(MiniMessage.get()
-                .parse(toString(placeholders)));
+        return null;
     }
 
     public BlockWrapper toWrappedBlock(String... placeholders) {
